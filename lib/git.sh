@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 #######################################
-# Verbose Bash library
+# Git Bash library
 #######################################
 # Personal Bash library
 # Copyright (C) 2020 Alexandre Le Roy
@@ -24,31 +24,12 @@
 # <https://www.gnu.org/licenses/>.
 #######################################
 
-VERBOSE='false'
-
 #######################################
-# Prints the variable name and value passed as argument
-# if the `${VERBOSE}` constant is set to 'true'
-# Arguments:
-#   Variable name to print if verbose
-#   Variable value to print if verbose
+# Prints the current Git branch
 # Outputs:
-#   Variable name and value if verbose
+#   Current Git branch, nothing if not in Git
+#   repository
 #######################################
-function verbose_variable {
-  verbose "${1}: \"${2}\""
-}
-
-#######################################
-# Prints the message passed as argument if the
-# `${VERBOSE}` constant is set to 'true'
-# Arguments:
-#   Message to print if verbose
-# Outputs:
-#   Message if verbose
-#######################################
-function verbose {
-  if [[ "${VERBOSE}" == 'true' ]]; then
-    echo "${1}"
-  fi
+function git_branch {
+	git rev-parse --abbrev-ref HEAD 2> /dev/null
 }
