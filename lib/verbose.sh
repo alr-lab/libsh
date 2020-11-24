@@ -36,7 +36,7 @@ VERBOSE='false'
 #   Variable name and value if verbose
 #######################################
 function verbose_variable {
-  verbose "${1}: ${2}"
+  verbose "${1}: \"${2}\""
 }
 
 #######################################
