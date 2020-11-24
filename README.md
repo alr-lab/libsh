@@ -13,7 +13,7 @@ Personal Bash library
 
 ## Usage
 
-```console
+```txt
 #!/bin/bash
 #
 # Simple bash script to demonstrate libsh
