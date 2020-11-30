@@ -3,6 +3,7 @@
 # Error related Bash library
 # SPDX-License-Identifier: AGPL-3.0-or-later
 # (c) 2020, Alexandre Le Roy <ale-roy@student.42.fr>
+# https://github.com/alr-lab/libsh/
 
 #######################################
 # Prints error message to `stderr` stream if any, then
@@ -30,9 +31,14 @@ function ferror {
 #   Variable value
 # Outputs:
 #   Error message to `stderr` if value is empty
+# Dependency:
+#   Verbose library `verbose.sh` for `verbose_variable`
+#   function
 #######################################
 function cvar {
   if [[ "${#2}" -eq 0 ]]; then
     ferror "Missing argument \"${1}\""
+  else
+    verbose_variable "${1}" "${2}"
   fi
 }

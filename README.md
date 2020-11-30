@@ -34,11 +34,7 @@ readonly VERBOSE
 msg='Hello, world!'
 verbose_variable 'message' "${msg}"
 branch=$(git_branch)
-if [[ "${#branch}" -gt 0 ]]; then
-	verbose_variable 'branch' "${branch}"
-else
-	ferror "Unable to read git branch"
-fi
+cvar 'Git branch' "${branch}"
 echo "${msg}"
 ```
 
