@@ -20,3 +20,19 @@ function ferror {
   fi
   exit 1
 }
+
+#######################################
+# Check variable content, exits the program if
+# empty with error message to `stderr`
+# `cvar` stands for `Check VARiable`
+# Arguments:
+#   Variable name
+#   Variable value
+# Outputs:
+#   Error message to `stderr` if value is empty
+#######################################
+function cvar {
+  if [[ "${#2}" -eq 0 ]]; then
+    ferror "Missing argument \"${1}\""
+  fi
+}
