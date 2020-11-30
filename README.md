@@ -9,7 +9,9 @@ Personal Bash library
 | `err.sh`     | Error related functions     |
 | `git.sh`     | Git related functions       |
 | `io.sh`      | I/O related functions       |
+| `json.sh`    | JSON functions              |
 | `verbose.sh` | Verbosity related functions |
+| `yaml.sh`    | YAML functions              |
 
 ## Usage
 
